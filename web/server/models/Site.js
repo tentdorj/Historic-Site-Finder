@@ -17,7 +17,18 @@ mongoose.connect('mongodb+srv://alokiksingh2:historicsitefinder@historicsiteffnd
   const siteSchema = new mongoose.Schema({
     sitename: { type: String, required: true },
     sitelocation: { type: String, required: true },
+    // site_community: { type: String, required: true },
+    // site_constructiondate: { type: String, required: true },
+    // site_typology: { type: String, required: true },
+    // site_OriginalOwner: { type: String, required: true },
+    // site_masterPlan: { type: String, required: true },
+    // site_Architect: { type: String, required: true },
+    // site_ArchitecturalStyle: { type: String, required: true },
+    // site_era: { type: String, required: true },
+    // site_currentUse: { type: String, required: true },
+    // site_Demolished: { type: String, required: true },
     sitedescription: { type: String, required: true },
+    site_URL: { type: String, required: true },
     site_rating: { type: String, required: true },
   });
 
@@ -28,7 +39,18 @@ mongoose.connect('mongodb+srv://alokiksingh2:historicsitefinder@historicsiteffnd
   const sampleSiteData = {
     sitename: 'Tower of London',
     sitelocation: '123 street, city, state, zip code',
+    // site_community: 'community',
+    // site_constructiondate: '12/12/2020',
+    // site_typology: 'typology',
+    // site_OriginalOwner: 'owner',
+    // site_masterPlan: 'masterplan',
+    // site_Architect: 'architect',
+    // site_ArchitecturalStyle: 'style',
+    // site_era: 'era',
+    // site_currentUse: 'use',
+    // site_Demolished: 'demolished on date',
     sitedescription: 'It is the best site in the world.',
+    site_URL: 'www.toweroflondon.com',
     site_rating: '3/5',
   };
   
