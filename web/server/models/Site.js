@@ -19,7 +19,7 @@ const siteSchema = new mongoose.Schema({
     site_Demolished: { type: String, required: false },
     sitedescription: { type: String, required: false },
     site_URL: { type: String, required: false },
-    //  site_rating: { type: String, required: true },
+    site_rating: [{ type: Number }],
 });
 
   // Create the model using the schema
