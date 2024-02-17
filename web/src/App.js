@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Landing from "./homepage/Landing";
 import NavBar from "./homepage/NavBar";
+import Login from "./loginSignUp/Login";
 
 function App() {
   return (
@@ -8,7 +9,8 @@ function App() {
       <header>
         <NavBar />
       </header>
-      <Landing />
+      {/* <Landing /> */}
+ 
     </div>
   );
 }
