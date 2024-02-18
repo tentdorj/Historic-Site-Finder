@@ -1,15 +1,9 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useAuth } from "./authProvider";
+import { isAuth } from "./utils/protectRoutes";
 
 export const ProtectedRoute = () => {
-  const { token } = useAuth();
+  const auth = isAuth();
 
-  // Check if the user is authenticated
-  if (!token) {
-    // If not authenticated, redirect to the login page
-    return <Navigate to="/login" />;
-  }
-
-  // If authenticated, render the child routes
-  return <Outlet />;
+  return auth === true ? <Outlet /> : <Navigate to="/login" />;
 };

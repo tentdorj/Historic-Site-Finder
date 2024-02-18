@@ -5,18 +5,25 @@ import Login from "./loginSignUp/Login";
 import Signup from "./loginSignUp/Signup";
 import HistoricSite from "./viewPageHS/HistoricSite";
 import Dash from "./dashboard/Dash";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NotFound from "./NotFound";
 import { useContext, useEffect } from "react";
 import { AuthProvider } from "./authContext";
 import Spinner from "./Spinner";
 import { ProtectedRoute } from "./ProtectedRoute";
-import Routes from "./customRoutes";
+
 function App() {
   return (
-    <AuthProvider>
-      <Routes />
-    </AuthProvider>
+    <>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="" element={<ProtectedRoute />}>
+          <Route path="/user/dash" element={<Dash />} />
+        </Route>
+        <Route path="/*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 }
 
