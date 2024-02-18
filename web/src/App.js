@@ -2,6 +2,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Landing from "./homepage/Landing";
 import NavBar from "./homepage/NavBar";
 import Login from "./loginSignUp/Login";
+import Signup from "./loginSignUp/Signup";
+
 
 function App() {
   return (
@@ -10,7 +12,8 @@ function App() {
         <NavBar />
       </header>
       {/* <Landing /> */}
-    <Login/>
+    <Signup/>
+    {/* <Login/> */}
     </div>
   );
 }

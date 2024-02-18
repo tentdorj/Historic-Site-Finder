@@ -14,22 +14,27 @@ export default function Landing() {
                 </div>
                 <div className="col border d-flex justify-content-center align-items-center bg-white">
                     <div className="p-3">
-                        <h2 className="">Login</h2>
+                        <h2 >Signup</h2>
                         <div className="form-group d-flex flex-column">
-                            <label className="mt-2 login-text ">Username:</label>
-                            <div class="col-xs-3">  
+                            <label className="mt-2 login-text ">Enter Username:</label>
+                            <div class="col-xs-3 pb-4">  
                                 <input type="text"></input>
-                                <p className="forgot-text mb-3 ">Forgot Username? <strong><u><a href="" className="font-color">Click Here</a></u></strong></p>
+                                {/* <p className="forgot-text mb-3 ">Forgot Username? <strong><u><a href="" className="font-color">Click Here</a></u></strong></p> */}
                             </div>
-                            <label  className="login-text">Password:</label>
-                            <div class="col-xs-3">  
+                            <label  className="login-text">Enter Password:</label>
+                            <div class="col-xs-3 pb-4">  
                                 <input type="password"></input>
-                                <p className="forgot-text">Forgot Password? <strong><u><a href="" className="font-color">Click Here</a></u></strong></p>
+                                {/* <p className="forgot-text">Forgot Password? <strong><u><a href="" className="font-color">Click Here</a></u></strong></p> */}
+                            </div>
+                            <label  className="login-text">Verify Password:</label>
+                            <div class="col-xs-3 pb-4">  
+                                <input type="password"></input>
+                                {/* <p className="forgot-text">Forgot Password? <strong><u><a href="" className="font-color">Click Here</a></u></strong></p> */}
                             </div>
                         </div> 
                         {/* <div className="text-center"> */}
                             <button type="submit" class="btn btn-submit mw-2 mb-2 mt-3">Submit</button>
-                            <p  className="">Dont have an account? <strong><u><a href="" className="font-color">Sign Up</a></u></strong></p>
+                            <p  className="">Have have an account? <strong><u><a href="" className="font-color">Login</a></u></strong></p>
                         {/* </div> */}
                     </div>              
                     
