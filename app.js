@@ -1,13 +1,24 @@
 require('dotenv').config();
+
 const express = require('express');
-const commentController = require('./controllers/commentController');
-const authMiddleware = require('/middleware/authMiddleware'); // Import the authMiddleware
+const mongoose = require('mongoose');
+// const authMiddleware = require('./middleware/authMiddleware');
 
-const router = express.Router();
+const authRoutes = require('./web/server/routes/UserRoute');
 
-// Applying the authMiddleware to protect the route
-router.post('/comments', authMiddleware, commentController.createComment);
-router.post('/comments/:commentId/like', authMiddleware, commentController.likeComment);
-router.post('/comments/:commentId/dislike', authMiddleware, commentController.dislikeComment);
+const app = express();
+app.use(express.json());
 
-module.exports = router;
+//  
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('Connected to MongoDB'))
+  .catch(err => console.error('Could not connect to MongoDB:', err));
+
+app.use('/api', authRoutes);
+
+
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});

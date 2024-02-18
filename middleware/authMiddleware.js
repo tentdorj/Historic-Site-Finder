@@ -1,22 +1,24 @@
+// authMiddleware.js
 const jwt = require('jsonwebtoken');
-const User = require('./models/User'); // Adjust the path to your User model
 
-const authMiddleware = async (req, res, next) => {
+const authMiddleware = (req, res, next) => {
+    // Get the token from the Authorization header
+    const authHeader = req.headers.authorization;
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).json({ message: 'Authorization token is required' });
+    }
+
+    const token = authHeader.split(' ')[1];
+
     try {
-        const token = req.headers.authorization.split(' ')[1];
+        // Verify the token
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        
-        // Fetch user from database
-        const user = await User.findById(decoded.userID);
-        if (!user) {
-            throw new Error('No user found with this ID');
-        }
-
-        // Attach user to request object
-        req.user = user;
-
+        // Attach user information to the request
+        req.user = decoded;
         next();
     } catch (error) {
-        res.status(401).json({ message: 'Authentication failed' });
+        res.status(403).json({ message: 'Invalid or expired token' });
     }
 };
+
+module.exports = authMiddleware;
