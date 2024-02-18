@@ -35,6 +35,7 @@ const insertSampleData = async () => {
   await User.deleteMany({}); // Optional: Clears the User collection before insertion
 
   for (const user of sampleUsers) {
+    //const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(user.password, 12);
     await User.create({ ...user, password: hashedPassword });
   }

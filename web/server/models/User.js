@@ -9,14 +9,22 @@ const userSchema = new mongoose.Schema({
     password: { type: String, required: true },
     badge: { type: Number, default: 0 },
     karmaRating: { type: Number, default: 0 },
-    // comments: [{
-    //   description: { type: String, required: true },
-    //   date: { type: Date, required: true },
-    //   likes: { type: Number, required: true },
-    // }]
+    
 });
 
 
+  
+
+userSchema.pre('save', async function(next) {   // avoid rehashing the password
+    //const user = this;
+    if (this.isModified('password')) {
+        //salt = await bcrypt.genSalt();
+        this.password = await bcrypt.hash(this.password, 12);
+        // console.log("this.password \n");
+        // console.log(this.password);
+    }
+    next();
+});
 
 
 userSchema.methods.toJSON = function() {
@@ -24,23 +32,13 @@ userSchema.methods.toJSON = function() {
     delete userObject.password;
     return userObject;
   };
-  
 
-userSchema.pre('save', async function(next) {
-    const user = this;
-    if (user.isModified('password')) {
-        user.password = await bcrypt.hash(user.password, 12);
-    }
-    next();
-});
 
 userSchema.methods.isValidPassword = async function(providedPassword) {
-    try {
-        console.log("gddf");
-        return await bcrypt.compare(providedPassword, this.password);
-    } catch (error) {
-        throw new Error(error);
-    }
+    
+    console.log(await bcrypt.compare(providedPassword, this.password));
+    return await bcrypt.compare(providedPassword, this.password);
+    
 };
 
 const User = mongoose.model('User', userSchema);
