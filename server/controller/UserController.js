@@ -30,29 +30,35 @@ const login = async (req, res) => {
 };
 
 const signup = async (req, res) => {
-  const { username, password, verifyPassword   } = req.body;
+  const { username, password, verifyPassword } = req.body;
 
   try {
-    
+    if (password !== verifyPassword) {
+      return res.status(400).json({ message: "Passwords do not match" });
+    }
 
     const newUser = new User({
-      
       username: req.body.username,
       password: req.body.password,
-      verifyPassword: req.body.verifyPassword,
-
     });
 
+    // Save the new user to the database
+    const savedUser = await newUser.save();
 
-    console.log("User authenticated successfully");
-    const token = jwt.sign({ userId: User._id }, process.env.JWT_SECRET, {
+    console.log("User registered successfully");
+    
+    // Assuming you want to sign a token for the newly registered user
+    const token = jwt.sign({ userId: savedUser._id }, process.env.JWT_SECRET, {
       expiresIn: "24h",
     });
+
     res.json({ token });
   } catch (error) {
-    res.status(500).json({ message: "Error logging in user" });
+    console.error("Error signing up user:", error);
+    res.status(500).json({ message: "Error signing up user" });
   }
 };
+
 
 module.exports = {
   login,
