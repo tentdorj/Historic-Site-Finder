@@ -11,6 +11,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/dash" element={<Dash />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
