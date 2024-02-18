@@ -96,7 +96,7 @@ export default function Login() {
                 Dont have an account?{" "}
                 <strong>
                   <u>
-                    <Link to={"/historicSite"} className="font-color">
+                    <Link to={"/signup"} className="font-color">
                       Sign Up
                     </Link>
                   </u>

@@ -20,6 +20,15 @@ const api = {
       throw error;
     }
   },
+  signup: async (email, pw, vp) => {
+    try {
+      const data = { username: email, password: pw, verifyPassword: vp};
+      const response = await axiosInstance.post("/signup", data);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  },
   getSites: async () => {
     try {
       const response = await axiosInstance.get("/sites");
