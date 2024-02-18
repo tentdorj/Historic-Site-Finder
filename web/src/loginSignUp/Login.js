@@ -49,7 +49,7 @@ export default function Login() {
                 <label className="mt-2 login-text ">Username:</label>
                 <div class="col-xs-3">
                   <input
-                    type="email"
+                    type="text"
                     id="username-input"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}

@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = "https://localhost:3001"; // Your API base URL
+const BASE_URL = "http://localhost:3001/api"; // Your API base URL
 
 const axiosInstance = axios.create({
   baseURL: BASE_URL,
@@ -13,6 +13,9 @@ const axiosInstance = axios.create({
 const api = {
   login: async (email, pw) => {
     try {
+      const data = { username: email, password: pw };
+      const response = await axiosInstance.post("/login", data);
+      return response.data;
     } catch (error) {
       throw error;
     }
