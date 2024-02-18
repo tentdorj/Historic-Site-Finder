@@ -4,6 +4,7 @@ import MyMap from "./MyMap";
 import SiteCard from "./SiteCard";
 import api from "../api";
 import Spinner from "../Spinner";
+import "./SiteCard.css";
 
 export default function Dash() {
   const [sites, setSites] = useState([]);
@@ -30,8 +31,8 @@ export default function Dash() {
         <Spinner />
       ) : (
         <div className="d-flex min-vh-100 min-vw-100">
-          <div className="row text-center w-100">
-            <div className="col-4  bg-primary">
+          <div className="row text-center w-100 bg-secondary">
+            <div className="col-4 outer-container">
               {sites.length > 0 &&
                 sites.map((site, index) => (
                   <SiteCard
