@@ -28,7 +28,6 @@ export default function Login() {
     return(
      
         <div className="min-vh-100 d-flex align-items-center justify-content-center position-relative bg-img">
-        {/* <img src={yycImage} alt="skyline" className=" img-fluid position-absolute object-fit-fill w-100 h-100 img-blur"/> */}
         <img src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/11/15/09/calgary-skyline.jpg?quality=75&width=1200&auto=webp" className=" img-fluid position-absolute object-fit-fill w-100 h-100" alt="yyc"/>
         <div className="d-flex flex-row position-absolute">
             <div className="row">
