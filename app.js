@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const commentController = require('./controllers/commentController');
 const authMiddleware = require('/middleware/authMiddleware'); // Import the authMiddleware
