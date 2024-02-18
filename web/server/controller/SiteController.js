@@ -4,7 +4,8 @@ const SiteModel = require('../models/Site.js');
 const getSites = async (req, res) => {
     try {
         // Retrieve all sites from the database
-        const sites = await SiteModel.find().select('sitename');
+        const sites = await SiteModel.find();
+        
         
         // Return the list of sites in the response
         res.json(sites);

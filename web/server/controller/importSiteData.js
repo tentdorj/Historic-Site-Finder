@@ -38,7 +38,7 @@ async function importDataFromCSV() {
         try {
           console.log('Processing row:', row);
           // Extract specific columns from the row
-          const { NAME, ADDRESS, COMMUNITY, CONSTRUCTION_YR, TYPOLOGY, ORIG_OWNER, MASTER_PLAN_THEME, ARCHITECT, ARCHITECTURE_STYLE, DEVELOPMENT_ERA, CURRENT_USE, DEMOLISHED_DT, SIGNIFICANCE_SUMM, PIC_URL, POINT } = row;
+          const { NAME, ADDRESS, COMMUNITY, CONSTRUCTION_YR, TYPOLOGY, ARCHITECT, ARCHITECTURE_STYLE, DEVELOPMENT_ERA, CURRENT_USE, DEMOLISHED_DT, SIGNIFICANCE_SUMM, PIC_URL, POINT,LAST_UPDATE_DT, ORIG_USE_TY } = row;
           // Create an object with the extracted data
           const siteData = {
             sitename: NAME,
@@ -46,8 +46,6 @@ async function importDataFromCSV() {
             site_community: COMMUNITY,
             site_constructiondate: CONSTRUCTION_YR,
             site_typology: TYPOLOGY,
-            site_OriginalOwner: ORIG_OWNER,
-            site_masterPlan: MASTER_PLAN_THEME,
             site_Architect: ARCHITECT,
             site_ArchitecturalStyle: ARCHITECTURE_STYLE,
             site_era: DEVELOPMENT_ERA,
@@ -56,6 +54,8 @@ async function importDataFromCSV() {
             sitedescription: SIGNIFICANCE_SUMM,
             site_URL: PIC_URL,
             site_point: POINT,
+            site_last_update: LAST_UPDATE_DT,
+            site_original_use: ORIG_USE_TY
           };
           // Insert data into MongoDB
           await SiteModel.create(siteData);

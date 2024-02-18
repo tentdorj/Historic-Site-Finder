@@ -8,10 +8,10 @@ const siteSchema = new mongoose.Schema({
     sitename: { type: String, required: true },
     sitelocation: { type: String, required: true },
     site_community: { type: String, required: false },
-    site_constructiondate: { type: String, required: false },
+    // site_constructiondate: { type: String, required: false },
     site_typology: { type: String, required: false },
-    site_OriginalOwner: { type: String, required: false },
-    site_masterPlan: { type: String, required: false },
+    // site_OriginalOwner: { type: String, required: false },
+    // site_masterPlan: { type: String, required: false },
     site_Architect: { type: String, required: false },
     site_ArchitecturalStyle: { type: String, required: false },
     site_era: { type: String, required: false },
@@ -20,7 +20,9 @@ const siteSchema = new mongoose.Schema({
     sitedescription: { type: String, required: false },
     site_URL: { type: String, required: false },
     site_rating: [{ type: Number }],
-    site_point: {type: String, required:false}
+    site_point: {type: String, required:false},
+    site_last_update: {type: String, required:false},
+    site_original_use: {type: String, required:false}
 });
 
   // Create the model using the schema
