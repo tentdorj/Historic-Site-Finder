@@ -55,6 +55,7 @@ async function importDataFromCSV() {
             site_Demolished: DEMOLISHED_DT,
             sitedescription: SIGNIFICANCE_SUMM,
             site_URL: PIC_URL,
+            site_point: POINT,
           };
           // Insert data into MongoDB
           await SiteModel.create(siteData);
