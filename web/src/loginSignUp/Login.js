@@ -1,25 +1,28 @@
 import yycImage from "./yyc-skyline-image.jpg";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate, redirect } from "react-router-dom";
 import { useState } from "react";
 import api from "../api";
+import { useAuth } from "../authContext";
+import NavBar from "../homepage/NavBar";
 
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [userData, setUserData] = useState(null);
+    const auth = useAuth();
     const [error, setError] = useState(null);
+    const navigate = useNavigate();
   
     const handleLogin = async (e) => {
       e.preventDefault();
       console.log("submit login form...", email, password);
       try {
-        const response = await api.login(email, password);
-        setUserData(response.data);
-        setError(null);
-      } catch (error) {
-        setError(error.message);
-        setUserData(null);
+        await api.login(email, password);
+      setError(null);
+      navigate("/user/dash", { replace: true });
+    } catch (error) {
+      setError(error.message);
+      auth.setUser(null);
       }
     };
     return(
@@ -35,19 +38,35 @@ export default function Login() {
                 <div className="col border d-flex justify-content-center align-items-center frosted-glass p-5">
                     <div className="p-3">
                         <h2 className="">Login</h2>
-                        <div className="form-group d-flex flex-column">
+                        <form
+                            onSubmit={handleLogin}
+                            className="form-group d-flex flex-column"
+                            >
                             <label className="mt-2 login-text ">Username:</label>
                             <div class="col-xs-3">  
-                                <input type="text" id="username-input"></input>
+                            <input
+                                type="text"
+                                id="username-input"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                                ></input>
                                 <p className="forgot-text mb-3 ">Forgot Username? <strong><u><a href="" className="font-color">Click Here</a></u></strong></p>
                             </div>
                             <label  className="login-text">Password:</label>
                             <div class="col-xs-3">  
-                                <input type="password" id="password-input"></input>
+                                <input
+                                type="password"
+                                id="password-input"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                                ></input>
                                 <p className="forgot-text">Forgot Password? <strong><u><a href="" className="font-color">Click Here</a></u></strong></p>
                             </div>
-                        </div> 
+                        </form> 
                             <button type="submit" class="btn btn-submit mw-2 mb-2 mt-3">Submit</button>
+                            {error && <p className="text-danger">{error}</p>}
                             <p  className="">Dont have an account? <strong><u><Link to={"/historicSite"} className="font-color">Sign Up</Link></u></strong></p>
                   
                     </div>              
