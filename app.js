@@ -4,8 +4,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 // const authMiddleware = require('./middleware/authMiddleware');
 
-const authRoutes = require('./web/server/routes/UserRoute');
-const commentRoute = require('./web/server/routes/comment');
+const authRoutes = require('./web/server/controller/UserController');
+const commentRoute = require('./web/server/controller/commentController');
 
 const app = express();
 app.use(express.json());
@@ -20,7 +20,7 @@ app.use('/api', commentRoute);
 
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
