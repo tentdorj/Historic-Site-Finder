@@ -3,7 +3,7 @@ import maple from "./maple.png";
 
 export default function NavBar() {
   return (
-    <nav className="d-flex navbar shadow-large px-4 py-2  border-bottom border-4 border-secondary" bg="light" data-bs-theme="light">
+    <nav className="d-flex navbar shadow-large px-4 py-2  border-secondary" bg="light" data-bs-theme="light">
       <div class="h-10 w-50 d-flex flex-row align-items-center ">
         {/* <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/White_maple_leaf_symbol.png" alt="maple leaf" className="img-fluid img-responsive img-resize"/> */}
         <img src={maple} alt="maple leaf" className="img-fluid img-responsive img-resize"/>
