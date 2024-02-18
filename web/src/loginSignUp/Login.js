@@ -5,6 +5,23 @@ import { useState } from "react";
 import api from "../api";
 
 export default function Login() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [userData, setUserData] = useState(null);
+    const [error, setError] = useState(null);
+  
+    const handleLogin = async (e) => {
+      e.preventDefault();
+      console.log("submit login form...", email, password);
+      try {
+        const response = await api.login(email, password);
+        setUserData(response.data);
+        setError(null);
+      } catch (error) {
+        setError(error.message);
+        setUserData(null);
+      }
+    };
     return(
      
         <div className="min-vh-100 d-flex align-items-center justify-content-center position-relative bg-img">
