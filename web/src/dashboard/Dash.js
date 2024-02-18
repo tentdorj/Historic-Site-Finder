@@ -7,7 +7,6 @@ export default function Dash() {
       <div className="row text-center w-100">
         <div className="col-4  bg-primary">
           <SiteCard name={"name"} purpose={"purpose"} neighborhood={"area"} />
-          <p>site 2</p>
         </div>
         <div className="col p-0  mx-auto bg-primary">
           <MyMap />
