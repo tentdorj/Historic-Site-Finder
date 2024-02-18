@@ -10,7 +10,7 @@ function App() {
         <NavBar />
       </header>
       {/* <Landing /> */}
- 
+    <Login/>
     </div>
   );
 }

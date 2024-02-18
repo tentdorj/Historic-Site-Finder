@@ -1,3 +1,23 @@
 .img-blur{
     filter: blur(5px);
 }
+.forgot-text{
+    font-size: 0.8rem;
+}
+.login-text{
+    font-size: 1.3rem;
+}
+
+.font-color{
+    color: #7067CF;
+}
+
+.btn-submit{
+    background-color: #7067CF;
+    color:white;
+}
+.btn-submit:hover{
+    background-color: white;
+    color: #7067CF;
+    border: solid 2px #7067CF;
+}
