@@ -25,17 +25,12 @@ export default function Login() {
     return(
      
         <div className="min-vh-100 d-flex align-items-center justify-content-center position-relative bg-img">
-        {/* <img src={yycImage} alt="skyline" className=" img-fluid position-absolute object-fit-fill w-100 h-100 img-blur"/> */}
         <img src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/11/15/09/calgary-skyline.jpg?quality=75&width=1200&auto=webp" className=" img-fluid position-absolute object-fit-fill w-100 h-100" alt="yyc"/>
         <div className="d-flex flex-row position-absolute">
             <div className="row">
-                {/* <div className="bg-img border col p-0">
-                    <img src={yycImage} alt="skyline" className="img-fluid w-100 h-100"/>
-                </div> */}
                 <div className="col border d-flex justify-content-center align-items-center frosted-glass p-5">
                     <div className="p-3">
                         <h2 className="">Login</h2>
-                        {/* <div className="form-group d-flex flex-column"> */}
                         <form
                             onSubmit={handleLogin}
                             className="form-group d-flex flex-column"
@@ -66,7 +61,6 @@ export default function Login() {
                         {error && <p className="text-danger">{error}</p>}
                         <button type="submit" class="btn btn-submit mw-2 mb-2 mt-3">Submit</button>
                         <p  className="">Dont have an account? <strong><u><Link to={"/historicSite"} className="font-color">Sign Up</Link></u></strong></p>
-                  
                     </div>              
                     
                 </div>
