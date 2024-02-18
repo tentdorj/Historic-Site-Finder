@@ -43,7 +43,7 @@ export default function Dash() {
                 ))}
             </div>
             <div className="col p-0  mx-auto bg-primary">
-              <MyMap />
+              <MyMap sites={sites} />
             </div>
           </div>
         </div>
