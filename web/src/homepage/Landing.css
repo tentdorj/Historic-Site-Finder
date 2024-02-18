@@ -1,0 +1,25 @@
+.overlay {
+  position: relative;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+.navbar-background{
+  background-color: #342E37;
+}
+h1{
+  color: white;
+}
+.navbar-border{
+  border: solid 2px #342E37 ;
+}
+.underline-color{
+  text-decoration-color: #7067CF;
+}
