@@ -17,9 +17,9 @@ export default function Signup() {
         console.log("submit signup form...", username, password, verifyPassword);
         try {
         const response = await api.signup(username, password, verifyPassword);
-        // if (password !== verifyPassword) {
-        //     return response.status(400).json({ message: "Passwords do not match" });
-        // }
+        if (password !== verifyPassword) {
+            return response.status(400).json({ message: "Passwords do not match" });
+        }
 
         setUserData(response.data);
         setError(null);

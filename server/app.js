@@ -6,9 +6,10 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 // const authMiddleware = require('./middleware/authMiddleware');
 const userRouter = require("./routes/UserRoute");
+const commentRouter = require("./routes/comment");
 
-const authRoutes = require("./controller/UserController");
-const commentRoute = require("./controller/commentController");
+
+
 
 const app = express();
 app.use(express.json());
@@ -29,6 +30,7 @@ mongoose
   .catch((err) => console.error("Could not connect to MongoDB:", err));
 
 app.use("/api", userRouter);
+app.use("/api", commentRouter)
 // app.use("/api", authRoutes);
 // app.use("/api", commentRoute);
 
