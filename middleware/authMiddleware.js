@@ -1,22 +1,24 @@
+// authMiddleware.js
 const jwt = require('jsonwebtoken');
 
 const authMiddleware = (req, res, next) => {
-  try {
-    // Get the token from the authorization header
-    const token = req.headers.authorization.split(' ')[1]; // Assumes "Bearer <token>"
+    // Get the token from the Authorization header
+    const authHeader = req.headers.authorization;
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).json({ message: 'Authorization token is required' });
+    }
 
-    // Verify the token
-    // Replace 'your_jwt_secret' with the secret key used to sign your JWTs
-    const decoded = jwt.verify(token, 'your_jwt_secret');
-    
-    // Attach the user payload to the request object
-    req.user = decoded;
+    const token = authHeader.split(' ')[1];
 
-    // Proceed to the next middleware/function
-    next();
-  } catch (err) {
-    res.status(401).json({ message: 'Authentication failed' });
-  }
+    try {
+        // Verify the token
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        // Attach user information to the request
+        req.user = decoded;
+        next();
+    } catch (error) {
+        res.status(403).json({ message: 'Invalid or expired token' });
+    }
 };
 
 module.exports = authMiddleware;
