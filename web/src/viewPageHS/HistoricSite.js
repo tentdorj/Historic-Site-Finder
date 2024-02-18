@@ -19,11 +19,7 @@ export default function HistoricSite() {
                     
                     <h4>Description</h4>
                     <p id="site-description">
-                        random long pararandom long pararandom long pararandom long pararandom long pararandom long pararandom long pararandom long pararandom long pararandom long para
-                        random long pararandom long pararandom long pararandom long pararandom long pararandom long pararandom long para
-                        random long pararandom long pararandom long pararandom long pararandom long pararandom long pararandom long para
-                        random long pararandom long pararandom long pararandom long pararandom long pararandom long para
-                        random long pararandom long pararandom long pararandom long para
+                        Description here
                     </p>
                 </div>
             </div>
@@ -43,8 +39,7 @@ export default function HistoricSite() {
                             <p className="m-1"> Username: </p>
                     </div>
                     <div className="mt-1 ms-2 align-items-center">
-                        Comment this is a coment this is a comentthis is a comentthis is a comentthis is a comentthis is a comentthis is a comentthis is a coment
-                            this is a comentthis is a comentthis is a comentthis is a comentthis is a coment
+                        Comment
                     </div>    
                     <p className="text-end p-1 m-0">add thumbs up thumbs down here</p>
                 </div>
