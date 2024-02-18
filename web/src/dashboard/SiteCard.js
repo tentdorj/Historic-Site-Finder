@@ -11,7 +11,7 @@ export default function SiteCard({ id, name, purpose, neighborhood }) {
     >
       <div className="row text-center  bg-white text-white w-100">
         <div className="col-4 outer-container">
-          <div className="d-flex justify-content flex-column card-background rounded-3">
+          <div className="d-flex justify-content flex-column card-background rounded-5">
             <span>
               <p>Site Name: {name}</p>
               <p>Site Purpose: {purpose}</p>
