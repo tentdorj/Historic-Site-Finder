@@ -4,18 +4,21 @@ const SiteModel = require('../models/Site.js');
 const getSites = async (req, res) => {
     try {
         // Retrieve all sites from the database
-        console.log("HI");
-        const sites = await SiteModel.find().select("sitename");
-        console.log(sites);
-
+        const sites = await SiteModel.find().select('sitename');
         
         // Return the list of sites in the response
         res.json(sites);
+        
     } catch (error) {
-        console.error('Error retrieving sites:', error);
+        console.error('Error', error);
         res.status(500).json({ error: 'Internal server error' });
     }
 };
+
+
+
+
+
 
 module.exports = {
     getSites

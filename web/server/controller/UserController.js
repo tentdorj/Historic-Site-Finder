@@ -1,7 +1,21 @@
-import User from '../models/User.js'
+const User = require('../models/User.js');
 
+// Controller function to handle getSites route
+const login = async (req, res) => {
+    try {
+        // Retrieve all sites from the database
+        const sites = await SiteModel.find().select("sitename");
+        console.log(sites);
 
-export const login = async (req, res) => { 
-    const userResponse = await tryLogin(req.body);
-    res.json(userResponse);
-}
+        
+        // Return the list of sites in the response
+        res.json(sites);
+    } catch (error) {
+        console.error('Error retrieving sites:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+};
+
+module.exports = {
+    getSites
+};

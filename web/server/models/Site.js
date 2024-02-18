@@ -20,6 +20,7 @@ const siteSchema = new mongoose.Schema({
     sitedescription: { type: String, required: false },
     site_URL: { type: String, required: false },
     site_rating: [{ type: Number }],
+    site_point: {type: String, required:false}
 });
 
   // Create the model using the schema

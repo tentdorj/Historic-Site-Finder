@@ -38,7 +38,7 @@ async function importDataFromCSV() {
         try {
           console.log('Processing row:', row);
           // Extract specific columns from the row
-          const { NAME, ADDRESS, COMMUNITY, CONSTRUCTION_YR, TYPOLOGY, ORIG_OWNER, MASTER_PLAN_THEME, ARCHITECT, ARCHITECTURE_STYLE, DEVELOPMENT_ERA, CURRENT_USE, DEMOLISHED_DT, SIGNIFICANCE_SUMM, PIC_URL } = row;
+          const { NAME, ADDRESS, COMMUNITY, CONSTRUCTION_YR, TYPOLOGY, ORIG_OWNER, MASTER_PLAN_THEME, ARCHITECT, ARCHITECTURE_STYLE, DEVELOPMENT_ERA, CURRENT_USE, DEMOLISHED_DT, SIGNIFICANCE_SUMM, PIC_URL, POINT } = row;
           // Create an object with the extracted data
           const siteData = {
             sitename: NAME,

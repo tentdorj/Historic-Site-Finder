@@ -1,2 +1,40 @@
-import Comment from '../models/Comment.js'
+const Comment = require('../models/Comment.js');
 
+// Controller function to handle getSites route
+const createComment = async (req, res) => {
+    try {
+        
+        
+    } catch (error) {
+        console.error('Error', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+};
+
+
+const likeComment = async (req, res) => {
+    try {
+
+        
+    } catch (error) {
+        console.error('Error', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+};
+
+const getComment = async (req, res) => {
+    try {
+    
+    } catch (error) {
+        console.error('Error', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+};
+
+
+
+module.exports = {
+    createComment,
+    likeComment,
+    getComment
+};
