@@ -1,11 +1,12 @@
 import yycImage from "./yyc-skyline-image.jpg";
 import "./Login.css";
+import { Link } from "react-router-dom";
 
 export default function Landing() {
     return(
      
-    <div className="min-vh-100 d-flex align-items-center justify-content-center position-relative border-4 bg-img border">
-        <img src={yycImage} alt="skyline" className=" img-fluid position-absolute object-fit-fill w-100 img-blur"/>
+    <div className="min-vh-100 d-flex align-items-center justify-content-center position-relative border-4 bg-img border-5">
+        <img src={yycImage} alt="skyline" className=" img-fluid position-absolute object-fit-fill w-100 h-100 img-blur"/>
         {/* <div className="d-flex justify-content-center align-items-center flex-row w-75 position-absolute">  */}
         <div className="d-flex flex-row position-absolute">
             <div className="row">
@@ -18,19 +19,18 @@ export default function Landing() {
                         <div className="form-group d-flex flex-column">
                             <label className="mt-2 login-text ">Username:</label>
                             <div class="col-xs-3">  
-                                <input type="text"></input>
+                                <input type="text" id="username-input"></input>
                                 <p className="forgot-text mb-3 ">Forgot Username? <strong><u><a href="" className="font-color">Click Here</a></u></strong></p>
                             </div>
                             <label  className="login-text">Password:</label>
                             <div class="col-xs-3">  
-                                <input type="password"></input>
+                                <input type="password" id="password-input"></input>
                                 <p className="forgot-text">Forgot Password? <strong><u><a href="" className="font-color">Click Here</a></u></strong></p>
                             </div>
                         </div> 
-                        {/* <div className="text-center"> */}
                             <button type="submit" class="btn btn-submit mw-2 mb-2 mt-3">Submit</button>
-                            <p  className="">Dont have an account? <strong><u><a href="" className="font-color">Sign Up</a></u></strong></p>
-                        {/* </div> */}
+                            <p  className="">Dont have an account? <strong><u><Link to={"/signup"} className="font-color">Sign Up</Link></u></strong></p>
+                  
                     </div>              
                     
                 </div>

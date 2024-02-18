@@ -1,12 +1,12 @@
 import yycImage from "./yyc-skyline-image.jpg";
 import "./Login.css";
+import { Link } from "react-router-dom";
 
 export default function Landing() {
     return(
      
-    <div className="min-vh-100 d-flex align-items-center justify-content-center position-relative border-4 bg-img border">
-        <img src={yycImage} alt="skyline" className=" img-fluid position-absolute object-fit-fill w-100 img-blur"/>
-        {/* <div className="d-flex justify-content-center align-items-center flex-row w-75 position-absolute">  */}
+    <div className="min-vh-100 d-flex align-items-center justify-content-center position-relative bg-img">
+        <img src={yycImage} alt="skyline" className=" img-fluid position-absolute object-fit-fill w-100 h-100 img-blur"/>
         <div className="d-flex flex-row position-absolute">
             <div className="row">
                 <div className="bg-img border col p-0">
@@ -24,20 +24,15 @@ export default function Landing() {
                             <label  className="login-text">Enter Password:</label>
                             <div class="col-xs-3 pb-4">  
                                 <input type="password"></input>
-                                {/* <p className="forgot-text">Forgot Password? <strong><u><a href="" className="font-color">Click Here</a></u></strong></p> */}
                             </div>
                             <label  className="login-text">Verify Password:</label>
                             <div class="col-xs-3 pb-4">  
                                 <input type="password"></input>
-                                {/* <p className="forgot-text">Forgot Password? <strong><u><a href="" className="font-color">Click Here</a></u></strong></p> */}
                             </div>
                         </div> 
-                        {/* <div className="text-center"> */}
-                            <button type="submit" class="btn btn-submit mw-2 mb-2 mt-3">Submit</button>
-                            <p  className="">Have have an account? <strong><u><a href="" className="font-color">Login</a></u></strong></p>
-                        {/* </div> */}
-                    </div>              
-                    
+                        <button type="submit" class="btn btn-submit mw-2 mb-2 mt-3">Submit</button>
+                        <p className="">Have an account? <strong><u><Link to={"/login"} className="font-color">Login</Link></u></strong></p>
+                    </div>               
                 </div>
             </div>
         </div>
