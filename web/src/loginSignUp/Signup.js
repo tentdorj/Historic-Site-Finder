@@ -2,7 +2,7 @@ import yycImage from "./yyc-skyline-image.jpg";
 import "./Login.css";
 import { Link } from "react-router-dom";
 
-export default function Landing() {
+export default function Signup() {
     return(
      
     <div className="min-vh-100 d-flex align-items-center justify-content-center position-relative bg-img">

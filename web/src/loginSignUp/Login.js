@@ -2,10 +2,10 @@ import yycImage from "./yyc-skyline-image.jpg";
 import "./Login.css";
 import { Link } from "react-router-dom";
 
-export default function Landing() {
+export default function Login() {
     return(
      
-    <div className="min-vh-100 d-flex align-items-center justify-content-center position-relative border-4 bg-img border-5">
+    <div className="min-vh-100 d-flex align-items-center justify-content-center position-relative bg-img">
         <img src={yycImage} alt="skyline" className=" img-fluid position-absolute object-fit-fill w-100 h-100 img-blur"/>
         {/* <div className="d-flex justify-content-center align-items-center flex-row w-75 position-absolute">  */}
         <div className="d-flex flex-row position-absolute">
@@ -29,7 +29,7 @@ export default function Landing() {
                             </div>
                         </div> 
                             <button type="submit" class="btn btn-submit mw-2 mb-2 mt-3">Submit</button>
-                            <p  className="">Dont have an account? <strong><u><Link to={"/signup"} className="font-color">Sign Up</Link></u></strong></p>
+                            <p  className="">Dont have an account? <strong><u><Link to={"/historicSite"} className="font-color">Sign Up</Link></u></strong></p>
                   
                     </div>              
                     
