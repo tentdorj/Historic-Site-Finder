@@ -8,6 +8,7 @@ const sampleUsers = [
     name: "John Doe",
     username: "johndoe",
     password: "password123",
+    verifyPassword: "true",
     badge: 1,
     karmaRating: 100
   },
@@ -15,6 +16,7 @@ const sampleUsers = [
     name: "Jane Smith",
     username: "janesmith",
     password: "password456",
+    "verifyPassword": "true",
     badge: 2,
     karmaRating: 150
   },
@@ -22,6 +24,7 @@ const sampleUsers = [
     name: "Alice Johnson",
     username: "alicejohnson",
     password: "password789",
+    verifyPassword: "true",
     badge: 1,
     karmaRating: 200
   }

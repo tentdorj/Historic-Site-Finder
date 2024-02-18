@@ -33,20 +33,19 @@ const signup = async (req, res) => {
   const { username, password, verifyPassword   } = req.body;
 
   try {
-    if (password !== verifyPassword) {
-      return res.status(400).json({ message: "Passwords do not match" });
-    }
+    
 
     const newUser = new User({
       
       username: req.body.username,
       password: req.body.password,
-      
+      verifyPassword: req.body.verifyPassword,
+
     });
 
 
     console.log("User authenticated successfully");
-    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ userId: User._id }, process.env.JWT_SECRET, {
       expiresIn: "24h",
     });
     res.json({ token });
