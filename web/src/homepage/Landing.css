@@ -11,23 +11,21 @@
   text-align: center;
 }
 
-.navbar-background{
-  background-color: black;
-}
+/* .navbar{
+  background-color: rgb(247, 243, 243);
+} */
+
 h1{
   color: white;
 }
-.navbar-border{
-  border: solid 3px #342E37 ;
+
+.nav-site-name{
+  text-decoration: none;
+  color: #100f0f;
 }
-.underline-color{
-  text-decoration-color: #7067CF;
-}
-.font-nav-color{
-  color: #ffffff;
-}
+
 .img-resize{
-  width:10%;
+  width:50px;
 }
 
 .ls-btn{
@@ -38,4 +36,5 @@ h1{
 .ls-btn:hover{
   background-color: white;
   color: black;
+  border: solid 2px black;
 }

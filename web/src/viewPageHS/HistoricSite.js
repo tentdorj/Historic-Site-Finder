@@ -7,7 +7,7 @@ export default function HistoricSite() {
   return (
     <div className="d-flex justify-content-center align-items-center flex-column">
         {/* Name of the Historic sight here */}
-        <h2 className="mb-4 mt-4">Historic site name</h2>
+     
 
         {/* Picture and description here */}
         <div className="container-fluid">
@@ -16,8 +16,9 @@ export default function HistoricSite() {
                 <div className="bg-img border col p-0 m-2">
                     <img src={yycImage} alt="skyline" className="img-fluid w-100 h-100"/>
                 </div>
-                <div className="col border align-middle m-2">
-                    <h3>Description</h3>
+                <div className="col border text-middle m-2">
+                    <h2 className="mb-4 mt-4 align-middle">Historic site name</h2>
+                    <h4>Description</h4>
                     <p>
                         random long pararandom long pararandom long pararandom long pararandom long pararandom long pararandom long pararandom long pararandom long pararandom long para
                         random long pararandom long pararandom long pararandom long pararandom long pararandom long pararandom long para
