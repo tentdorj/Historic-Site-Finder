@@ -6,7 +6,7 @@ export default function SiteCard({ id, name, purpose, neighborhood }) {
     <Link
       to="/site/:id"
       style={{ textDecoration: "none" }}
-      className="d-flex min-vw-100 py-2"
+      className="d-flex min-vh-100 min-vw-100"
     >
       <div className="row text-center text-white w-100">
         <div className="col-4  bg-primary">
@@ -20,6 +20,7 @@ export default function SiteCard({ id, name, purpose, neighborhood }) {
             </span>
           </div>
         </div>
+        
       </div>
     </Link>
   );
