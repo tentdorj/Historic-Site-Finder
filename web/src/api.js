@@ -23,7 +23,7 @@ const api = {
   },
   getSites: async () => {
     try {
-      const response = await axiosInstance.get("/sites");
+      const response = await axiosInstance.get("/sites/all");
       return response.data;
     } catch (error) {
       throw error;
