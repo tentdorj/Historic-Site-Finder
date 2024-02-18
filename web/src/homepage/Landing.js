@@ -1,5 +1,6 @@
 import yyc from "./yyc.jpg";
 import "./Landing.css";
+import { Link } from "react-router-dom";
 
 export default function Landing() {
   return (
@@ -10,7 +11,9 @@ export default function Landing() {
           <div className="overlay-text">
             <h2>Explore Calgary's Historic Landmarks</h2>
             <button type="button" className="btn btn-success">
-              See History
+              <Link className="text-white" to="/dash">
+                See History{" "}
+              </Link>
             </button>
           </div>
         </div>
