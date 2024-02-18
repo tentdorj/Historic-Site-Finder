@@ -15,7 +15,8 @@ const api = {
     try {
       const data = { username: email, password: pw };
       const response = await axiosInstance.post("/login", data);
-      return response.data;
+      window.localStorage.setItem("token", response.data.token);
+      return response.data.token;
     } catch (error) {
       throw error;
     }
@@ -31,7 +32,7 @@ const api = {
   },
   getSites: async () => {
     try {
-      const response = await axiosInstance.get("/sites");
+      const response = await axiosInstance.get("/sites/all");
       return response.data;
     } catch (error) {
       throw error;
