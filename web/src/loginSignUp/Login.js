@@ -64,10 +64,10 @@ export default function Login() {
                                 ></input>
                                 <p className="forgot-text">Forgot Password? <strong><u><a href="" className="font-color">Click Here</a></u></strong></p>
                             </div>
-                        </form> 
                             <button type="submit" class="btn btn-submit mw-2 mb-2 mt-3">Submit</button>
+                        </form> 
                             {error && <p className="text-danger">{error}</p>}
-                            <p  className="">Dont have an account? <strong><u><Link to={"/historicSite"} className="font-color">Sign Up</Link></u></strong></p>
+                            <p  className="">Dont have an account? <strong><u><Link to={"/signup"} className="font-color">Sign Up</Link></u></strong></p>
                   
                     </div>              
                     
