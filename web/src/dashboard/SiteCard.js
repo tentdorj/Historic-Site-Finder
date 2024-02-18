@@ -20,9 +20,7 @@ export default function SiteCard({ id, name, purpose, neighborhood }) {
             </span>
           </div>
         </div>
-        <div className="col p-0  mx-auto bg-primary">
-          <MyMap />
-        </div>
+        
       </div>
     </Link>
   );
