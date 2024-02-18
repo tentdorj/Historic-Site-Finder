@@ -12,14 +12,30 @@
 }
 
 .navbar-background{
-  background-color: #342E37;
+  background-color: black;
 }
 h1{
   color: white;
 }
 .navbar-border{
-  border: solid 2px #342E37 ;
+  border: solid 3px #342E37 ;
 }
 .underline-color{
   text-decoration-color: #7067CF;
+}
+.font-nav-color{
+  color: #ffffff;
+}
+.img-resize{
+  width:10%;
+}
+
+.ls-btn{
+  background-color: rgb(39, 39, 39);
+  color: white;
+  border-radius: 2px;
+}
+.ls-btn:hover{
+  background-color: white;
+  color: black;
 }

@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import yycImage from "./yyc-skyline-image.jpg";
+import "./HistoricSite.css";
+
 
 export default function HistoricSite() {
   return (
@@ -11,10 +13,10 @@ export default function HistoricSite() {
         <div className="container-fluid">
             <div className="row">
                 {/* <div className="col border text-center">Image</div> */}
-                <div className="bg-img border col p-0">
+                <div className="bg-img border col p-0 m-2">
                     <img src={yycImage} alt="skyline" className="img-fluid w-100 h-100"/>
                 </div>
-                <div className="col border text-center ">
+                <div className="col border align-middle m-2">
                     <h3>Description</h3>
                     <p>
                         random long pararandom long pararandom long pararandom long pararandom long pararandom long pararandom long pararandom long pararandom long pararandom long para
@@ -35,20 +37,27 @@ export default function HistoricSite() {
                 <h3 class="border-bottom pt-3">Comments</h3>
                 <p id="no-comments" className="d-none">There are currently no comments...</p>
                 {/* actual comment */}
-                <div className=" rounded-3 border border-2 mh-3">
+                <div className=" rounded-3 border border-2 mh-3 h-20">
+                   
                      {/* <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle"alt="Avatar" />  */}
-                    <p className="text-end">February 17, 2024</p>
-                    <div className="d-flex p-0 m-0">
-                        <p>profile pic</p>
-                        <p> Username: </p>
-                        <p>Comment</p>
+                    <p className="text-end border p-1 m-0 h-100">February 17, 2024</p>
+                    <div className="d-flex align-items-center p-0 m-0 h-100">
+                        <span className="h-100 w-20 border border-5 ">
+                            {/* <img src={yycImage} alt="pfp" className="rounded-circle pfp"/> */}
+                            {/* <img src={yycImage} alt="pfp" class="rounded-circle border w-20 h-20 "/> */}
+                        </span>
+                            {/* <p> Username: </p> */}
+                            {/* <p>Comment this is a coment this is a comentthis is a comentthis is a comentthis is a comentthis is a comentthis is a comentthis is a coment
+                            this is a comentthis is a comentthis is a comentthis is a comentthis is a coment
+                            </p> */}
+                        
                     </div>
-                    <p className="text-end">add thumbs up thumbs down here</p>
+                    <p className="text-end border p-1 m-0">add thumbs up thumbs down here</p>
 
                 </div>
-                <form className="d-inline-flex">
-                    <input type="text" id="comment" name="commenting" placeholder="Enter your comment" className="rounded-3 h-20 mt-3 p-3"/> 
-                    <button type="submit">Post</button>
+                <form class="d-flex flex-row justify-content-center">
+                    <input type="text" id="comment" name="commenting" placeholder="Enter your comment" className="rounded-3 w-40 h-20 mt-3 p-3"/> 
+                    <button type="submit" className="">Post</button>
                 </form>
             </div>
         </div>
