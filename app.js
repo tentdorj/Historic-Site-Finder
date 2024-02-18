@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 // const authMiddleware = require('./middleware/authMiddleware');
 
 const authRoutes = require('./web/server/routes/UserRoute');
+const commentRoute = require('./web/server/routes/comment');
 
 const app = express();
 app.use(express.json());
@@ -15,6 +16,7 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
   .catch(err => console.error('Could not connect to MongoDB:', err));
 
 app.use('/api', authRoutes);
+app.use('/api', commentRoute);
 
 
 

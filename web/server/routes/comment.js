@@ -1,4 +1,3 @@
-import express from 'express';
 import { 
     createComment,
     likeComment,
@@ -7,6 +6,9 @@ import {
 
 
 } from '../controllers/CommentController';
+
+const express = require('express');
+
 
 const router = express.Router();
 
